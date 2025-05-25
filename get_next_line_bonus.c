@@ -14,7 +14,6 @@
 
 static char	*line_split(char *str, char **remain)
 {
-	char	*tmp;
 	char	*result;
 	int		idx;
 
@@ -26,10 +25,9 @@ static char	*line_split(char *str, char **remain)
 		*remain = NULL;
 		return (str);
 	}
-	tmp = str;
 	result = ft_substr(str, 0, idx + 1);
 	*remain = ft_substr(str, idx + 1, ft_strlen(str));
-	free(tmp);
+	free(str);
 	return (result);
 }
 
